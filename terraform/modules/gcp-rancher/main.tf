@@ -22,6 +22,7 @@ resource "google_compute_firewall" "rancher_master_ports" {
     ports = [
       "22",  # SSH
       "80",  # Rancher UI
+      "179", # Calico networking (BGP)
       "443", # Rancher UI
     ]
   }

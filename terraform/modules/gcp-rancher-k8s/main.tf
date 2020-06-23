@@ -39,6 +39,7 @@ resource "google_compute_firewall" "rke_ports" {
     ports = [
       "22",          # SSH
       "80",          # Canal
+      "179",         # Calico networking (BGP)
       "443",         # Canal
       "6443",        # Kubernetes API server
       "2379-2380",   # etcd server client API
