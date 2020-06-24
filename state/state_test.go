@@ -5,17 +5,17 @@ import (
 )
 
 // Get test
-func TestGet(t *testing.T) {
-	stateObj, err := New("GetState", []byte(`{"config":{"triton":{"key":"55fd4s","url":"https://api.storage.com"}}}`))
-	if err != nil {
-		t.Error(err)
-	}
+// func TestGet(t *testing.T) {
+// 	stateObj, err := New("GetState", []byte(`{"config":{"triton":{"key":"55fd4s","url":"https://api.storage.com"}}}`))
+// 	if err != nil {
+// 		t.Error(err)
+// 	}
 
-	dumyKey := stateObj.Get("config.triton.key")
-	if dumyKey != "55fd4s" {
-		t.Errorf("value in state object, got: %s, want: %s.", dumyKey, "55fd4s")
-	}
-}
+// 	dumyKey := stateObj.Get("config.triton.key")
+// 	if dumyKey != "55fd4s" {
+// 		t.Errorf("value in state object, got: %s, want: %s.", dumyKey, "55fd4s")
+// 	}
+// }
 
 func TestSetManager(t *testing.T) {
 	stateObj, err := New("AddState", []byte(`{}`))
