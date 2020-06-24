@@ -20,7 +20,7 @@ jobs:
     - name: install build packages (general)
       run: sudo apt-get install ruby ruby-dev build-essential rpm
     - name: install build packages (Ruby Gem)
-      run: gem install --no-ri --no-rdoc fpm
+      run: gem install --no-document fpm
     - name: fetch dependencies
       run: go get -d ./...
 #     - name: dep ensure
