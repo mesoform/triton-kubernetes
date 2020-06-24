@@ -23,7 +23,7 @@ jobs:
       run: go get -d ./...
 #     - name: dep ensure
 #       run: dep ensure
-    - name: run unit tests
-      run: make test
+#    - name: run unit tests
+#      run: make test
     - name: make build
       run: make build
