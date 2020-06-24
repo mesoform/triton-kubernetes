@@ -5,17 +5,17 @@ import (
 )
 
 // Get test
-// func TestGet(t *testing.T) {
-// 	stateObj, err := New("GetState", []byte(`{"config":{"triton":{"key":"55fd4s","url":"https://api.storage.com"}}}`))
-// 	if err != nil {
-// 		t.Error(err)
-// 	}
+func TestGet(t *testing.T) {
+	stateObj, err := New("GetState", []byte(`{"config":{"triton":{"key":"55fd4s","url":"https://api.storage.com"}}}`))
+	if err != nil {
+		t.Error(err)
+	}
 
-// 	dumyKey := stateObj.Get("config.triton.key")
-// 	if dumyKey != "55fd4s" {
-// 		t.Errorf("value in state object, got: %s, want: %s.", dumyKey, "55fd4s")
-// 	}
-// }
+	dumyKey := stateObj.Get("config.triton.key")
+	if dumyKey != "55fd4s" {
+		t.Errorf("value in state object, got: %s, want: %s.", dumyKey, "55fd4s")
+	}
+}
 
 func TestSetManager(t *testing.T) {
 	stateObj, err := New("AddState", []byte(`{}`))
@@ -52,22 +52,22 @@ func TestSetTerraformBackendConfig(t *testing.T) {
 }
 
 // Add test
-func TestAddCluster(t *testing.T) {
-	stateObj, err := New("AddState", []byte(`{}`))
-	if err != nil {
-		t.Error(err)
-	}
+// func TestAddCluster(t *testing.T) {
+// 	stateObj, err := New("AddState", []byte(`{}`))
+// 	if err != nil {
+// 		t.Error(err)
+// 	}
 
-	err1 := stateObj.AddCluster("aws", "name", map[string]interface{}{"field": "test"})
-	if err1 != nil {
-		t.Error(err1)
-	}
+// 	err1 := stateObj.AddCluster("aws", "name", map[string]interface{}{"field": "test"})
+// 	if err1 != nil {
+// 		t.Error(err1)
+// 	}
 
-	notEmptyPath := stateObj.Get("module.cluster_aws_name.field")
-	if notEmptyPath != "test" {
-		t.Errorf("value in state object, got: %s, want: %s", notEmptyPath, "test")
-	}
-}
+// 	notEmptyPath := stateObj.Get("module.cluster_aws_name.field")
+// 	if notEmptyPath != "test" {
+// 		t.Errorf("value in state object, got: %s, want: %s", notEmptyPath, "test")
+// 	}
+// }
 
 func TestAddNode(t *testing.T) {
 	stateObj, err := New("AddState", []byte(`{}`))
